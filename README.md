@@ -3,9 +3,6 @@
 This repository contains a **modular, production-ready Hybrid Search Retrieval-Augmented Generation (RAG) system** built using Python.  
 The system combines **sparse retrieval (BM25)** and **dense retrieval (embeddings)** with **Llama 3 hosted on Groq** to deliver low-latency, high-relevance question answering.
 
-Unlike notebook-based demos, this project is structured as a clean, extensible codebase designed to reflect **real-world ML system design**.
-
----
 
 ## 🚀 Key Features
 
@@ -27,7 +24,6 @@ Unlike notebook-based demos, this project is structured as a clean, extensible c
   - Offline metrics such as Recall@K and MRR
   - Simple hooks to compare retrieval strategies
 
----
 
 ## 📁 Project Structure
 
@@ -54,3 +50,4 @@ hybrid-search-rag/
 ├── .env.example
 ├── .gitignore
 └── README.md
+```
