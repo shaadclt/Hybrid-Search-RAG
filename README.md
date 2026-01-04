@@ -2,7 +2,7 @@
 
 This repository contains a **production-ready Hybrid Search Retrieval-Augmented Generation (RAG) system** built using Python, FastAPI, Pinecone, and Llama 3 (served via Groq).
 
-The system combines **sparse keyword-based retrieval (BM25)** with **dense vector retrieval (Pinecone)**to deliver accurate, low-latency, and scalable question answering.
+The system combines **sparse keyword-based retrieval (BM25)** with **dense vector retrieval (Pinecone)** to deliver accurate, low-latency, and scalable question answering.
 
 The project is intentionally structured as a **modular Python codebase**, avoiding notebook-centric designs.
 
