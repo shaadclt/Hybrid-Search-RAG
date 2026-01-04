@@ -1,4 +1,7 @@
+fastapi
+uvicorn
 groq
+pinecone
 sentence-transformers
 rank-bm25
 numpy
