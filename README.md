@@ -98,9 +98,7 @@ python scripts/build_pinecone_index.py
 This step:
 
 - Embeds document chunks
-
 - Uploads vectors to Pinecone
-
 - Stores text as metadata for retrieval
 
 ## ▶️ Running the Application
@@ -137,13 +135,9 @@ Answer: ...
 The system is designed to be easily extended with:
 
 - Cross-encoder or LLM-based rerankers
-
 - Streaming responses
-
 - Authentication and rate limiting
-
 - Vector store alternatives (FAISS, Chroma)
-
 - Monitoring and feedback loops
 
 
@@ -152,13 +146,9 @@ The system is designed to be easily extended with:
 This project demonstrates:
 
 - Practical understanding of information retrieval systems
-
 - Trade-offs between sparse and dense search
-
 - Real-world RAG system design beyond notebooks
-
 - Clean, production-style Python engineering
-
 - API-first ML system deployment
 
 
