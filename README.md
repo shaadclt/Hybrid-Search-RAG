@@ -54,3 +54,121 @@ hybrid-search-rag/
 ├── .gitignore
 └── README.md
 ```
+
+## 🧠 System Overview
+
+1. **Documents** are loaded and chunked into passages
+
+2. **BM25** retrieves keyword-relevant passages in-memory
+
+3. **Pinecone** retrieves semantically relevant passages using embeddings
+
+4. Retrieval scores are **fused via a hybrid strategy**
+
+5. Top-ranked context is injected into a prompt
+
+6. Llama 3 on Groq generates a grounded answer
+
+This separation of **retrieval**, **ranking**, and **generation** makes the system easier to tune, debug, and scale.
+
+## ⚙️ Setup
+### 1. Clone the repository
+```bash
+git clone https://github.com/shaadclt/Hybrid-Search-RAG.git
+cd Hybrid-Search-RAG
+```
+
+### 2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root:
+```env
+GROQ_API_KEY=your_groq_api_key_here
+PINECONE_API_KEY=your_pinecone_api_key_here
+```
+
+⚠️ Do not commit `.env` to version control.
+
+### 🗄️ Build the Pinecone Index (One-Time)
+
+Before running the system, build the vector index:
+```bash
+python scripts/build_pinecone_index.py
+```
+
+This step:
+
+- Embeds document chunks
+
+- Uploads vectors to Pinecone
+
+- Stores text as metadata for retrieval
+
+## ▶️ Running the Application
+### Option 1: Run as an API (Recommended)
+```bash
+uvicorn app.api:app --reload
+```
+
+- Swagger UI: http://127.0.0.1:8000/docs
+
+- Endpoint: `POST /query`
+
+Example request:
+```json
+{
+  "query": "What is hybrid search?",
+  "top_k": 5
+}
+```
+
+### Option 2: Run as a CLI
+```bash
+python app/main.py
+```
+
+Example:
+```text
+Query: Explain hybrid retrieval
+Answer: ...
+```
+
+## 🔮 Extensibility
+
+The system is designed to be easily extended with:
+
+- Cross-encoder or LLM-based rerankers
+
+- Streaming responses
+
+- Authentication and rate limiting
+
+- Vector store alternatives (FAISS, Chroma)
+
+- Monitoring and feedback loops
+
+
+## 🏆 Why This Project
+
+This project demonstrates:
+
+- Practical understanding of information retrieval systems
+
+- Trade-offs between sparse and dense search
+
+- Real-world RAG system design beyond notebooks
+
+- Clean, production-style Python engineering
+
+- API-first ML system deployment
+
+
+## 📜 License
+
+This project is licensed under the MIT License.
+See the `LICENSE.txt` file for details.
+
