@@ -58,15 +58,10 @@ hybrid-search-rag/
 ## 🧠 System Overview
 
 1. **Documents** are loaded and chunked into passages
-
 2. **BM25** retrieves keyword-relevant passages in-memory
-
 3. **Pinecone** retrieves semantically relevant passages using embeddings
-
 4. Retrieval scores are **fused via a hybrid strategy**
-
 5. Top-ranked context is injected into a prompt
-
 6. Llama 3 on Groq generates a grounded answer
 
 This separation of **retrieval**, **ranking**, and **generation** makes the system easier to tune, debug, and scale.
