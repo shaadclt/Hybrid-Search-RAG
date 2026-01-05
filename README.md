@@ -1,4 +1,4 @@
-# Hybrid Search RAG (Production-Ready)
+# Hybrid Search RAG 
 
 This repository contains a **production-ready Hybrid Search Retrieval-Augmented Generation (RAG) system** built using Python, FastAPI, Pinecone, and Llama 3 (served via Groq).
 
